@@ -17,4 +17,9 @@
 
     </bean>
 
+    <bean id = "myPerson"
+          class = "spring_intro.Person">
+        <constructor-arg ref="myPet1"/>
+    </bean>
+
 </beans>
