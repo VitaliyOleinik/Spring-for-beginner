@@ -19,7 +19,7 @@
 
     <bean id = "myPerson"
           class = "spring_intro.Person">
-        <constructor-arg ref="myPet1"/>
+        <property name="pet" ref="myPet" />
     </bean>
 
 </beans>
