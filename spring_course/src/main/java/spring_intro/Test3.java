@@ -10,8 +10,9 @@ public class Test3 {
 //        Pet pet = context.getBean("myPet", Pet.class);
         // Pet pet = new Dog();
         Person p = context.getBean("myPerson", Person.class);
+        System.out.println(p.getAge());
+        System.out.println(p.getSurName());
         p.callYourPet();
-
         context.close();
     }
 }
