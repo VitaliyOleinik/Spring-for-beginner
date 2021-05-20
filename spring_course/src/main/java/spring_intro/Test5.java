@@ -9,8 +9,8 @@ public class Test5 {
         Dog myDog = context.getBean("myPet", Dog.class);
         Dog yourDog = context.getBean("myPet", Dog.class);
         System.out.println(myDog == yourDog);
-        myDog.setName("Belka");
-        yourDog.setName("Strelka");
+//        myDog.setName("Belka");
+//        yourDog.setName("Strelka");
         System.out.println();
         context.close();
     }
