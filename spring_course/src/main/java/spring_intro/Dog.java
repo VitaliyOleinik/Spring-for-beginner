@@ -1,5 +1,9 @@
 package spring_intro;
 
+import org.springframework.stereotype.Component;
+
+@Component
+// dog
 public class Dog implements Pet{
 //    private String name;
     Dog(){
