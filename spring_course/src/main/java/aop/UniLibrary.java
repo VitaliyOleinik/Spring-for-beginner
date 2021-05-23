@@ -15,8 +15,15 @@ public class UniLibrary extends AbstractLibrary{
         System.out.println("We take a magazine form uni");
     }
 
-    public String returnMagazine(){
-        System.out.println("ok");
-        return "Oh my, you return the book";
+    public void returnMagazine(){
+        System.out.println("Oh my, you return the book");
+    }
+
+    public void addBook(){
+        System.out.println("We add the book to University:      ");
+    }
+
+    public void addMagazine(){
+        System.out.println("We add the magazine to University:      ");
     }
 }
