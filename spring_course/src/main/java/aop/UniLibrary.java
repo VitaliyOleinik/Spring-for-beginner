@@ -7,23 +7,29 @@ public class UniLibrary extends AbstractLibrary{
 
     public void getBook(){
         System.out.println("Take the book from University:      ");
+        System.out.println("_____-______________-_______________-_____");
     }
     public void returnBook(){
         System.out.println("We return the book to UniLibrary");
+        System.out.println("_____-______________-_______________-_____");
     }
     public void getMagazine(){
         System.out.println("We take a magazine form uni");
+        System.out.println("_____-______________-_______________-_____");
     }
 
     public void returnMagazine(){
         System.out.println("Oh my, you return the book");
+        System.out.println("_____-______________-_______________-_____");
     }
 
-    public void addBook(){
+    public void addBook(String personName, Book book){
         System.out.println("We add the book to University:      ");
+        System.out.println("_____-______________-_______________-_____");
     }
 
     public void addMagazine(){
         System.out.println("We add the magazine to University:      ");
+        System.out.println("_____-______________-_______________-_____");
     }
 }
