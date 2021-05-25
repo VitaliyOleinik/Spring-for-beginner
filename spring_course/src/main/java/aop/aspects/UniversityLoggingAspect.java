@@ -25,12 +25,16 @@ public class UniversityLoggingAspect {
 //        System.out.println("afterReturningStudentsLoggingAdvice: logging list of students, after getStudents");
 //    }
 
-    @AfterThrowing(pointcut = "execution(* getStudents())",
-    throwing = "exception")
-    public void afterThrowingStudentsLoggingAdvice(Throwable exception){
+//    @AfterThrowing(pointcut = "execution(* getStudents())",
+//    throwing = "exception")
+//    public void afterThrowingStudentsLoggingAdvice(Throwable exception){
+//
+//        System.out.println("afterThrowingStudentsLoggingAdvice: логируем выброс исключения " + exception );
+//    }
 
-        System.out.println("afterThrowingStudentsLoggingAdvice: логируем выброс исключения " + exception );
+    @After("execution(* getStudents())")
+    public void afterGetStudentsLoggingAdvice(){
+        System.out.println("afterGetStudentsLoggingAdvice: логирование afterGetStudentsLoggingAdvice");
     }
-
 
 }
