@@ -12,25 +12,38 @@ public class Test1 {
         SessionFactory factory =
                 new Configuration().configure("hibernate.cfg.xml")
                 .addAnnotatedClass(Employee.class)
-                        .addAnnotatedClass(Department.class)
+                .addAnnotatedClass(Department.class)
                 .buildSessionFactory();
 
         Session session = null;
         try{
             session = factory.getCurrentSession();
 
-            Department department = new Department("IT", 1200, 300);
-
-            Employee employee1 = new Employee("Zaur", "Tregulor", 800);
-            Employee employee2 = new Employee("Elena", "Tregulor", 350);
-
-            department.addEmployeeToDepartment(employee1);
-            department.addEmployeeToDepartment(employee2);
+//            Department department = new Department("IT", 1200, 300);
+//
+//            Employee employee1 = new Employee("Zaur", "Tregulor", 800);
+//            Employee employee2 = new Employee("Elena", "Tregulor", 350);
+//
+//            department.addEmployeeToDepartment(employee1);
+//            department.addEmployeeToDepartment(employee2);
 
 
             session.beginTransaction();
 
-            session.save(department);
+//            session.save(department);
+            // GET
+//            Department department = session.get(Department.class, 1);
+//            System.out.println(department);
+//            System.out.println(department.getEmployees());
+//            Employee employee = session.get(Employee.class, 1);
+//            System.out.println(employee.getDepartment());
+
+            // DELETE
+
+            Employee employee = session.get(Employee.class, 1);
+
+            session.delete(employee);
+
 
             session.getTransaction().commit();
         }
