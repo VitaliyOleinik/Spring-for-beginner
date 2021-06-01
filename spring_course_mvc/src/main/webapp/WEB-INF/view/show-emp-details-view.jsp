@@ -13,6 +13,8 @@
 <body>
     <h2>Dear employee, you are welcome</h2>
 
-Your name: ${param.employeeName}
+<%--Your name: ${param.employeeName}--%>
+
+    Your name: ${nameAttribute}
 </body>
 </html>
