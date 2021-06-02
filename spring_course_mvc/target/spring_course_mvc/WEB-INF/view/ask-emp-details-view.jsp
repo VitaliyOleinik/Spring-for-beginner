@@ -15,11 +15,25 @@
 <%--    Department <form:input path="department"/>--%>
 <%--    <br><br>--%>
     Salary <form:input path="salary"/>
-    br><br>
+    <br><br>
     Department <form:select path="department">
         <form:options items="${employee.departments}"/>
     </form:select>
-    br><br>
+    <br><br>
+    Which car do you want?<br>
+
+    <form:radiobuttons path="carBrand" items="${employee.carBrands}"/>
+    <br>
+
+    <%--    BMW <form:radiobutton path="carBrand" value="BMW"/>--%>
+    <%--    Audi <form:radiobutton path="carBrand" value="Audi"/>--%>
+    <%--    Cadillac <form:radiobutton path="carBrand" value="Cadillac"/>--%>
+
+    Foreign language: <br>
+    <form:checkboxes path="languages" items="${employee.languageMap}"/>
+
+
+    <br><br>
     <input type="submit" value="ok">
 
 </form:form>

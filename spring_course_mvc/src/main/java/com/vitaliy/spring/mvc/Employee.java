@@ -9,12 +9,26 @@ public class Employee {
     private int salary;
     private String department;
     private Map<String, String> departments;
+    private String carBrand;
+    private Map<String, String> carBrands;
+    private String[] languages;
+    private Map<String, String> languageMap;
 
     public Employee() {
         departments = new HashMap<>();
         departments.put("IT", "Information Technology");
         departments.put("HR", "Human Researches");
         departments.put("Sales", "Sales");
+
+        carBrands = new HashMap<>();
+        carBrands.put("BMW", "BMW");
+        carBrands.put("Audi", "Audi");
+        carBrands.put("Cadillac", "Cadillac");
+
+        languageMap = new HashMap<>();
+        languageMap.put("En","English");
+        languageMap.put("De","Deutch");
+        languageMap.put("Ru","Russian");
     }
 
     public Employee(String name, String surname, int salary, String department) {
@@ -62,6 +76,38 @@ public class Employee {
 
     public void setDepartments(Map<String, String> departments) {
         this.departments = departments;
+    }
+
+    public String getCarBrand() {
+        return carBrand;
+    }
+
+    public void setCarBrand(String carBrand) {
+        this.carBrand = carBrand;
+    }
+
+    public Map<String, String> getCarBrands() {
+        return carBrands;
+    }
+
+    public void setCarBrands(Map<String, String> carBrands) {
+        this.carBrands = carBrands;
+    }
+
+    public String[] getLanguages() {
+        return languages;
+    }
+
+    public void setLanguages(String[] languages) {
+        this.languages = languages;
+    }
+
+    public Map<String, String> getLanguageMap() {
+        return languageMap;
+    }
+
+    public void setLanguageMap(Map<String, String> languageMap) {
+        this.languageMap = languageMap;
     }
 
     @Override
