@@ -3,9 +3,7 @@ package com.vitaliy.spring.sprinboot.spring_boot.controller;
 import com.vitaliy.spring.sprinboot.spring_boot.entity.Employee;
 import com.vitaliy.spring.sprinboot.spring_boot.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -21,4 +19,30 @@ public class MyRESTController {
         List<Employee> allEmployees = employeeService.getAllEmployees();
         return allEmployees;
     }
+
+    @GetMapping("/employees/{id}")
+    public Employee getEmployee(@PathVariable int id){
+        Employee employee = employeeService.getEmployee(id);
+
+        return employee;
+    }
+
+    @PostMapping("/employees")
+    public Employee addNewEmployee(@RequestBody Employee employee){
+        employeeService.saveEmployee(employee);
+        return employee;
+    }
+
+    @PostMapping("/employees")
+    public Employee updateEmployee(@RequestBody Employee employee){
+        employeeService.saveEmployee(employee);
+        return employee;
+    }
+
+    @DeleteMapping("/employees/{id}")
+    public String deleteEmployee(@PathVariable int id){
+        employeeService.deleteEmployee(id);
+        return "Employee with ID = " + id + " was deleted";
+    }
+
 }
