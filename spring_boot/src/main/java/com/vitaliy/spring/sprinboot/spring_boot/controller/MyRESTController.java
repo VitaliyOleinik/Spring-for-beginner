@@ -3,6 +3,7 @@ package com.vitaliy.spring.sprinboot.spring_boot.controller;
 import com.vitaliy.spring.sprinboot.spring_boot.entity.Employee;
 import com.vitaliy.spring.sprinboot.spring_boot.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -27,13 +28,13 @@ public class MyRESTController {
         return employee;
     }
 
-    @PostMapping("/employees")
+    @PostMapping(value = "/employees")
     public Employee addNewEmployee(@RequestBody Employee employee){
         employeeService.saveEmployee(employee);
         return employee;
     }
 
-    @PostMapping("/employees")
+    @PostMapping(value ="/employees")
     public Employee updateEmployee(@RequestBody Employee employee){
         employeeService.saveEmployee(employee);
         return employee;
