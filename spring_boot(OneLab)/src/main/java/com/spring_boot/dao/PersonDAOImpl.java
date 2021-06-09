@@ -1,6 +1,7 @@
 package com.spring_boot.dao;
 
 import com.spring_boot.entity.Person;
+import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -23,8 +24,12 @@ public class PersonDAOImpl implements PersonDAO{
 
     @Override
     public void savePerson(Person person) {
-        Person newPerson = entityManager.merge(person);
-        person.setId(newPerson.getId());
+        Session session = entityManager.unwrap(Session.class);
+        session.saveOrUpdate(person);
+
+        // does not work!!! why???
+//        Person newPerson = entityManager.merge(person);
+//        person.setId(newPerson.getId());
     }
 
     @Override
