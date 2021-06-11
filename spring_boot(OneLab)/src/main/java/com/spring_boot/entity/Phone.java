@@ -1,10 +1,17 @@
 package com.spring_boot.entity;
 
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
+
 public class Phone {
     private int id;
     private String name;
     private int number;
     private boolean hasWife;
+
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.DETACH, CascadeType.REFRESH, CascadeType.MERGE})
+    @JoinColumn(name = "person_id")
+    private Person person;
 
     public Phone() {
     }
