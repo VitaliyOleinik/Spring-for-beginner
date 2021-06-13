@@ -1,6 +1,7 @@
 package com.spring_boot.entity;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "persons")
@@ -13,6 +14,10 @@ public class Person {
     private String name;
     @Column(name = "age")
     private int age;
+
+    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.DETACH, CascadeType.REFRESH, CascadeType.MERGE}
+            , mappedBy = "persons")
+    private List<Phone> phones;
 
     public Person() {
     }
